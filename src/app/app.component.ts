@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularElement';
+  socNet=null;
+  public modif(event) {
+    console.log("event recu : ",event);
+    this.socNet=event;
+  }
 }

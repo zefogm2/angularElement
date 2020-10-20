@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { SocialButtonComponent } from './social-button/social-button.component';
 import { environment } from 'src/environments/environment';
 import { createCustomElement } from '@angular/elements';
+import { PonyComponent } from './pony/pony.component';
+import { ListeSocialNetComponent } from './liste-social-net/liste-social-net.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SocialButtonComponent
+    SocialButtonComponent,
+    PonyComponent,
+    ListeSocialNetComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +24,8 @@ import { createCustomElement } from '@angular/elements';
   //bootstrap: [AppComponent]
   entryComponents:[
     AppComponent,
-    SocialButtonComponent
+    SocialButtonComponent,
+    ListeSocialNetComponent
   ]
 })
 export class AppModule {
@@ -31,6 +36,8 @@ export class AppModule {
     if (environment.production) {
       const socialButtonElement=createCustomElement(SocialButtonComponent,{injector:this.injector})
       customElements.define('social-button',socialButtonElement);
+      const listeSocialNetElement=createCustomElement(ListeSocialNetComponent,{injector:this.injector})
+      customElements.define('liste-social-networks',listeSocialNetElement);
     } else {
       app.bootstrap(AppComponent);
     }

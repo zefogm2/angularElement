@@ -1,0 +1,3 @@
+<select (change)="changeSelect($event)">
+  <option *ngFor="let n of listeSocialNetworks; let index=index" value="{{ index }}">{{n.lib}}</option>
+</select>
