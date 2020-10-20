@@ -13,11 +13,26 @@
 <social-button provider="linkedin" link="http://www.linkedin.com"></social-button>
  <social-button provider="facebook" link="http://www.facebook.com"></social-button>
  <social-button provider="twitter" link="http://www.twitter.com"></social-button>
- <social-button provider="google" link="http://www.google.com"></social-button>
-T2
-<liste-social-networks onChange="console.log(event)"></liste-social-networks>
+ <social-button id="modifiable" provider="google" link="http://www.google.com"></social-button>
+
+<liste-social-networks></liste-social-networks>
 
 
 
 </body>
+<script>
+  var liste=document.querySelector('liste-social-networks');
+  liste.addEventListener("sortie",(event)=>{
+                let obj=event.detail;
+                console.log(event.detail);
+
+                var sb= document.getElementById('modifiable');
+                console.log("sb",sb);
+                sb.setAttribute("provider",obj.lib);
+                sb.setAttribute("link",obj.url );
+              });
+
+
+
+</script>
 </html>

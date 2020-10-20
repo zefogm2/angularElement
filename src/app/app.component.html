@@ -9,6 +9,7 @@
   <app-liste-social-net (sortie)="modif($event)"></app-liste-social-net>
   {{socNet | json }}
   <app-social-button  *ngIf="socNet!=null" [provider]="socNet.lib" [link]="socNet.url"></app-social-button>
+
 </router-outlet>
 
 
